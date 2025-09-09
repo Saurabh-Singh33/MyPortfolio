@@ -16,7 +16,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Skills</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -27,28 +27,53 @@
             <h1>Hi, I'm <span> Saurabh <br>Singh</span> From India</h1>
         </div>
     </div>
-    <!-----------------About------------->
+    <!-----------------About Me------------->
     <div id="About">
-        <div class="row">
-            <div class="About-col-1">
-                <img src="Images/SectionImg.png">
-            </div>
-            <div class="About-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p> I am an enthusiastic MERN Stack Developer who enjoys turning ideas into real-world applications. I
-                    build complete solutions using MongoDB, Express.js, React.js, and Node.js, ensuring functionality
-                    with smooth user experiences. Alongside MERN, I am strengthening my DSA skills and exploring Java
-                    Full Stack  as part of my learning journey. My goal is to grow as a developer
-                    while building projects that make a meaningful impact.</p>
+        <div class="container">
+            <div class="row">
+                <div class="About-col-1">
+                    <img src="Images/SectionImg.png">
+                </div>
+                <div class="About-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p> I am an enthusiastic MERN Stack Developer who enjoys turning ideas into real-world applications.
+                        I
+                        build complete solutions using MongoDB, Express.js, React.js, and Node.js, ensuring
+                        functionality
+                        with smooth user experiences. Alongside MERN, I am strengthening my DSA skills and exploring
+                        Java
+                        Full Stack as part of my learning journey. My goal is to grow as a developer
+                        while building projects that make a meaningful impact.</p>
 
-                  <div class="tab-titles">
-                    <p class="tab-links">Experiences</p>
-                    <p class="tab-links">Education</p>
-                  </div>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Domain')">Domain</p>
+                        <p class="tab-links" onclick="opentab('Experiences')">Experiences</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Domain">
+                        <ul>
+                            <li><span> Web Developement</span><br> Web App Development</li>
+                            <li><span> Mern</span><br></li>
+                            <li><span> DSA</span><br> Problem Solving</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experiences">
+                        <ul>
+                            <li><span>Fresher</span><br>Open To Work</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>Graduation</span><br>B.tech CSE </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    </div>
+    <!-----------------------------Skills-------------------------------->
+    <script src="script.js"></script>
 </body>
 
 </html>
