@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .skills-section {
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 per row */
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .skill {
+      text-align: center;
+    }
+
+    .skill img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .skill img:hover {
+      transform: scale(1.1);
+    }
+
+    .skill p {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Make it responsive for smaller screens */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <img src="html.png" alt="HTML">
+        <p>HTML</p>
+      </div>
+      <div class="skill">
+        <img src="css.png" alt="CSS">
+        <p>CSS</p>
+      </div>
+      <div class="skill">
+        <img src="js.png" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill">
+        <img src="java.png" alt="Java">
+        <p>Java</p>
+      </div>
+      <div class="skill">
+        <img src="react.png" alt="React">
+        <p>React</p>
+      </div>
+      <div class="skill">
+        <img src="git.png" alt="Git">
+        <p>Git</p>
+      </div>
+      <div class="skill">
+        <img src="mysql.png" alt="MySQL">
+        <p>MySQL</p>
+      </div>
+      <div class="skill">
+        <img src="node.png" alt="Node.js">
+        <p>Node.js</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
