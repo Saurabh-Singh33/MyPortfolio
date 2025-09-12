@@ -85,6 +85,7 @@ nav ul li a:hover::after {
 }
 
 /* -------------About-----------------*/
+
 #About {
     padding: 80px 0px;
     color: #ababab;
@@ -167,3 +168,40 @@ nav ul li a:hover::after {
 }
 
 /*-----------------------------Skills---------------------------*/
+
+#Skills {
+    padding: 10px 0px;
+    color: #ababab;
+    width: 100%;
+}
+
+.title h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 25px;
+}
+
+.SkillsNames {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.Skills {
+    text-align: center;
+   
+}
+.Skill img {
+    height: 180px;
+    width: 180px;
+    border-radius: 25%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.Skill img:hover {
+    transform: scale(1.2);
+}
