@@ -191,6 +191,7 @@ nav ul li a:hover::after {
 
 .Skills {
     text-align: center;
+    margin: 20px;
 
 }
 
@@ -205,4 +206,25 @@ nav ul li a:hover::after {
 
 .Skill img:hover {
     transform: scale(1.2);
+}
+
+.Skill p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+    text-align: center;
+    background-color: #061e38;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+
+.Skill p:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
