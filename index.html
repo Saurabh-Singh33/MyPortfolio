@@ -4,239 +4,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyPersonal Portfolio</title>
+    <title>Saurabh Singh | Full-Stack Developer & MERN Specialist</title>
+    <meta name="description" content="Portfolio of Saurabh Singh - Full-Stack Developer, MERN Stack Specialist, and Computer Science undergraduate passionate about building high-impact web applications.">
+    <meta name="theme-color" content="#07090e">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/1cbe08e3a5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="header">
+
+    <!-- ==========================================================
+         NAVBAR
+         ========================================================== -->
+    <header id="navbar">
         <div class="container">
             <nav>
-                <img src="Images/Logo.png" class="Logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <a href="#home" class="nav-brand">
+                    <img src="Images/Logo.png" alt="Saurabh Logo" class="Logo" onerror="this.style.display='none'">
+                    <span class="brand-text">Saurabh<span>.dev</span></span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+
+                <div class="nav-actions">
+                    <a href="#contact" class="btn btn-outline btn-sm">Let's Talk</a>
+                    <!-- Hamburger Toggle Button -->
+                    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
         </div>
-        <div class="header-text">
-            <p>Full-Stack Developer</p>
-            <h1>Hi, I'm <span> Saurabh <br>Singh</span> From India</h1>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#About"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="#Skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+            <li><a href="#Portfolio"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="Images/SIH_PPT_Team_rebel[1].pdf" target="_blank" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-file-pdf"></i> View SIH Deck / CV
+            </a>
         </div>
     </div>
-    <!-----------------About Me------------->
-    <div id="About">
-        <div class="container">
-            <div class="row">
-                <div class="About-col-1">
-                    <img src="Images/SectionImg.png">
-                </div>
-                <div class="About-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p> I am an enthusiastic MERN Stack Developer who enjoys turning ideas into real-world applications.
-                        I
-                        build complete solutions using MongoDB, Express.js, React.js, and Node.js, ensuring
-                        functionality
-                        with smooth user experiences. Alongside MERN, I am strengthening my DSA skills and exploring
-                        Java
-                        Full Stack as part of my learning journey. My goal is to grow as a developer
-                        while building projects that make a meaningful impact.</p>
+    <div class="nav-overlay" id="nav-overlay"></div>
 
+    <!-- ==========================================================
+         HERO SECTION
+         ========================================================== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>Available for Opportunities & Internships</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello World, I'm</span>
+                        <span class="name-highlight">Saurabh Singh</span>
+                    </h1>
+
+                    <div class="hero-role-wrapper">
+                        <span class="typing-prefix">I build</span>
+                        <span class="typing-text" id="typing-element">Full-Stack Web Applications</span>
+                    </div>
+
+                    <p class="hero-bio">
+                        A passionate Computer Science student and <strong>MERN Stack Developer</strong> from India. 
+                        I architect responsive frontends, robust REST APIs, and impactful AI-integrated tools with clean code and modern design.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#Portfolio" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Get In Touch</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+                        <a href="Images/SIH_PPT_Team_rebel[1].pdf" target="_blank" class="btn btn-outline">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Resume / Deck</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="hero-socials">
+                        <a href="https://github.com/Saurabh-Singh33" target="_blank" class="social-pill" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/saurabh-singh-b1b88a326" target="_blank" class="social-pill" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/SaurabhSin8534" target="_blank" class="social-pill" title="Twitter / X Profile">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="mailto:saurabhsingh.dev@gmail.com" class="social-pill" title="Direct Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics -->
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <div class="metric-number">16<span>+</span></div>
+                            <div class="metric-label">Technologies Mastered</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">5<span>+</span></div>
+                            <div class="metric-label">Full-Stack Projects</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">SIH<span>'25</span></div>
+                            <div class="metric-label">Team Rebel Finalist</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Profile Card with Floating Badges -->
+                <div class="hero-visual">
+                    <div class="hero-glow-ring"></div>
+
+                    <!-- Floating Tech Badges -->
+                    <div class="floating-badge badge-top-left">
+                        <img src="Images/react.png" alt="React">
+                        <span>React.js</span>
+                    </div>
+
+                    <div class="floating-badge badge-mid-right">
+                        <img src="Images/node.png" alt="Node.js">
+                        <span>Node.js</span>
+                    </div>
+
+                    <div class="floating-badge badge-bottom-right">
+                        <img src="Images/java.png" alt="Java">
+                        <span>Java & DSA</span>
+                    </div>
+
+                    <!-- Main Avatar Card -->
+                    <div class="profile-card">
+                        <div class="profile-img-wrap">
+                            <img src="Images/HeaderPic.jpg" alt="Saurabh Singh - Developer">
+                            <div class="profile-info-strip">
+                                <div>
+                                    <div class="profile-badge-title">Saurabh Singh</div>
+                                    <div class="profile-badge-sub">Full-Stack Developer</div>
+                                </div>
+                                <span class="status-pill" style="padding: 4px 10px; font-size: 0.75rem;">
+                                    <span class="status-dot"></span> Active
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         ABOUT ME SECTION
+         ========================================================== -->
+    <section id="About">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-user"></i> About Me</span>
+                <h2 class="section-title">Turning Vision Into <span>Clean Solutions</span></h2>
+                <p class="section-subtitle">A blend of full-stack engineering, algorithmic logic, and a passion for crafting products that users love.</p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Visual / Secondary Portrait -->
+                <div class="about-visual">
+                    <div class="about-card-wrap">
+                        <img src="Images/SectionImg.png" alt="Saurabh Developer Workspace">
+                        <div class="about-corner-badge">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <div>
+                                <h4>MERN Stack & DSA</h4>
+                                <p>Building modern web apps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio & Interactive Tabs -->
+                <div class="about-content">
+                    <p class="about-intro">
+                        I am an enthusiastic <strong>MERN Stack Developer</strong> who thrives on building scalable, end-to-end digital solutions. 
+                        With expertise spanning <strong>MongoDB, Express.js, React.js, and Node.js</strong>, I create full-stack systems with responsive, intuitive user interfaces and robust server-side architectures. 
+                        <br><br>
+                        Beyond web technologies, I continuously sharpen my <strong>Data Structures & Algorithms (DSA)</strong> problem-solving skills in Java and C, and explore Java Full Stack to build high-performance systems. Recently, I spearheaded an AI speech-to-text project for the <strong>Smart India Hackathon</strong> with Team Rebel.
+                    </p>
+
+                    <!-- Tab Buttons -->
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('Domain')">Domain</p>
-                        <p class="tab-links" onclick="opentab('Experiences')">Experiences</p>
-                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <button class="tab-links active-link" onclick="opentab('Domain', event)">
+                            <i class="fa-solid fa-layer-group"></i> Domain Focus
+                        </button>
+                        <button class="tab-links" onclick="opentab('Experiences', event)">
+                            <i class="fa-solid fa-trophy"></i> Experience & Hackathons
+                        </button>
+                        <button class="tab-links" onclick="opentab('Education', event)">
+                            <i class="fa-solid fa-graduation-cap"></i> Education
+                        </button>
                     </div>
+
+                    <!-- Tab 1: Domain -->
                     <div class="tab-contents active-tab" id="Domain">
-                        <ul>
-                            <li><span> Web Developement</span><br> Web App Development</li>
-                            <li><span> Mern</span><br></li>
-                            <li><span> DSA</span><br> Problem Solving</li>
-                        </ul>
+                        <div class="tab-card-list">
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-code"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>Full-Stack Web Development</h4>
+                                    <p>End-to-end application architecture using the MERN stack (MongoDB, Express, React, Node.js), Next.js, and modern CSS.</p>
+                                    <span class="tab-item-tag">MERN • REST APIs • Responsive UI</span>
+                                </div>
+                            </div>
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-brain"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>DSA & Algorithmic Problem Solving</h4>
+                                    <p>Strengthening core computer science fundamentals, time/space complexity optimization, and algorithm implementation in Java and C.</p>
+                                    <span class="tab-item-tag">Data Structures • Algorithms • Optimization</span>
+                                </div>
+                            </div>
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-robot"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>AI Integration & Smart Tools</h4>
+                                    <p>Integrating speech-to-text, NLP models, and machine intelligence into web interfaces for next-generation user experiences.</p>
+                                    <span class="tab-item-tag">Whisper AI • Gemini API • Prompt Engineering</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Tab 2: Experiences -->
                     <div class="tab-contents" id="Experiences">
-                        <ul>
-                            <li><span>Fresher</span><br>Open To Work</li>
-                        </ul>
+                        <div class="tab-card-list">
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-award"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>Smart India Hackathon (SIH) — Team Rebel</h4>
+                                    <p>Built an <strong>AI-Based Mock Interview Platform</strong> solving interview anxiety. Engineered role-based question generators, speech-to-text transcription via Whisper AI, and automated feedback scoring.</p>
+                                    <span class="tab-item-tag">Hackathon Finalist • AI Tool • Team Lead</span>
+                                </div>
+                            </div>
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>Full-Stack Developer (Projects & Open Source)</h4>
+                                    <p>Built and deployed production-grade projects including an AI farming assistant (Farmo Grow), full-featured E-Commerce web app, and real-time news portal.</p>
+                                    <span class="tab-item-tag">Open To Full-Time Roles & Internships</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Tab 3: Education -->
                     <div class="tab-contents" id="Education">
-                        <ul>
-                            <li><span>Graduation</span><br>B.tech CSE </li>
-                        </ul>
+                        <div class="tab-card-list">
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>Bachelor of Technology (B.Tech)</h4>
+                                    <p>Computer Science and Engineering (CSE). Core coursework includes Data Structures & Algorithms, Object-Oriented Programming (OOPs), Operating Systems, and DBMS.</p>
+                                    <span class="tab-item-tag">Undergraduate • CSE</span>
+                                </div>
+                            </div>
+                            <div class="tab-item-card">
+                                <div class="tab-item-icon"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="tab-item-details">
+                                    <h4>Full-Stack Web Development & Modern Tech</h4>
+                                    <p>Intensive self-directed practical mastery in modern JavaScript (ES6+), React ecosystem, backend architecture, and database modeling.</p>
+                                    <span class="tab-item-tag">Self-Driven • Hands-On Projects</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <!-----------------------------Skills-------------------------------->
-    <div id="Skills">
+    </section>
+
+    <!-- ==========================================================
+         SKILLS SECTION
+         ========================================================== -->
+    <section id="Skills">
         <div class="container">
-            <div class="title">
-                <h1>Skills</h1>
-            </div>
-            <div class="SkillsNames">
-                <div class="Skill">
-                    <img src="Images/html.png" alt="HTML">
-                    <p>HTML</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/css.png" alt="CSS">
-                    <p>CSS</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/js.png" alt="js">
-                    <p>JavaScript</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/node.png" alt="Node">
-                    <p>NODE-JS</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/react.png" alt="React">
-                    <p>REACT</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/mysql.png" alt="mysql">
-                    <p>MySQL</p>
-                </div>
-
-                <div class="Skill">
-                    <img src="Images/MONGODB.jpg" alt="MongoDB">
-                    <p>MongoDB</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Express.png" alt="Express">
-                    <p>Expressjs</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/nextjs.png" alt="nextjs">
-                    <p>Nextjs</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Bootstrap.png" alt="Bootstrap">
-                    <p>Bootstrap</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Tailwind.png" alt="Tailwind">
-                    <p>Tailwind</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Postman.png" alt="Postman">
-                    <p>Postman</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Springboot.png" alt="Springboot">
-                    <p>Springboot</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/java.png" alt="Java">
-                    <p>Java</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/C.png" alt="C">
-                    <p>C</p>
-                </div>
-                <div class="Skill">
-                    <img src="Images/Git.png" alt="Git">
-                    <p>Git</p>
-                </div>
-
-
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-code"></i> Arsenal</span>
+                <h2 class="section-title">Technical <span>Skills & Tools</span></h2>
+                <p class="section-subtitle">A curated list of languages, frameworks, databases, and developer tooling I use to craft reliable applications.</p>
             </div>
 
-        </div>
-    </div>
+            <!-- Filter Category Buttons -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Technologies</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend & Database</button>
+                <button class="filter-btn" data-filter="tools">Languages & Tools</button>
+            </div>
 
-    <!----------------My Projects ----------------------->
-    <div id="Portfolio">
-        <div class="container">
-            <h1 class="sub-titile">My Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="Images/Project1Img.jpg">
-                    <div class="layer">
-                        <h3>News App</h3>
-                        <p>A responsive News App that provides users with the latest updates and headlines from various
-                            categories in a clean, user-friendly interface.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <!-- Skill Cards Grid -->
+            <div class="skills-grid" id="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/html.png" alt="HTML5">
                     </div>
+                    <div class="skill-name">HTML5</div>
+                    <div class="skill-category-tag">Markup</div>
                 </div>
-                <div class="work">
-                    <img src="Images/Java-or-Android.webp">
-                    <div class="layer">
-                        <h3>Ecommerce Website</h3>
-                        <p>
 
-                            Our e-commerce platform offers a wide product selection, secure payments,
-                            fast delivery, easy returns, and 24/7 customer support for a smooth shopping experience.
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/css.png" alt="CSS3">
+                    </div>
+                    <div class="skill-name">CSS3</div>
+                    <div class="skill-category-tag">Styling</div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/js.png" alt="JavaScript">
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-category-tag">Core ES6+</div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/react.png" alt="React">
+                    </div>
+                    <div class="skill-name">React.js</div>
+                    <div class="skill-category-tag">Frontend Lib</div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/nextjs.png" alt="Next.js">
+                    </div>
+                    <div class="skill-name">Next.js</div>
+                    <div class="skill-category-tag">Full-Stack React</div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Tailwind.png" alt="Tailwind CSS">
+                    </div>
+                    <div class="skill-name">Tailwind CSS</div>
+                    <div class="skill-category-tag">UI Framework</div>
+                </div>
+
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Bootstrap.png" alt="Bootstrap">
+                    </div>
+                    <div class="skill-name">Bootstrap</div>
+                    <div class="skill-category-tag">Responsive UI</div>
+                </div>
+
+                <!-- Backend & DB -->
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/node.png" alt="Node.js">
+                    </div>
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-category-tag">Runtime</div>
+                </div>
+
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Express.png" alt="Express.js">
+                    </div>
+                    <div class="skill-name">Express.js</div>
+                    <div class="skill-category-tag">Backend API</div>
+                </div>
+
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/MONGODB.jpg" alt="MongoDB">
+                    </div>
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-category-tag">NoSQL Database</div>
+                </div>
+
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/mysql.png" alt="MySQL">
+                    </div>
+                    <div class="skill-name">MySQL</div>
+                    <div class="skill-category-tag">Relational DB</div>
+                </div>
+
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Springboot.png" alt="Spring Boot">
+                    </div>
+                    <div class="skill-name">Spring Boot</div>
+                    <div class="skill-category-tag">Java Framework</div>
+                </div>
+
+                <!-- Languages & Tools -->
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/java.png" alt="Java">
+                    </div>
+                    <div class="skill-name">Java</div>
+                    <div class="skill-category-tag">DSA & OOP</div>
+                </div>
+
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/C.png" alt="C Language">
+                    </div>
+                    <div class="skill-name">C Language</div>
+                    <div class="skill-category-tag">Low-Level Logic</div>
+                </div>
+
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Git.png" alt="Git">
+                    </div>
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-category-tag">Version Control</div>
+                </div>
+
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon-wrap">
+                        <img src="Images/Postman.png" alt="Postman">
+                    </div>
+                    <div class="skill-name">Postman</div>
+                    <div class="skill-category-tag">API Testing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         PORTFOLIO / PROJECTS SECTION
+         ========================================================== -->
+    <section id="Portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Portfolio</span>
+                <h2 class="section-title">Featured <span>Projects & Work</span></h2>
+                <p class="section-subtitle">Real-world applications built with modern engineering, user-centric thinking, and attention to detail.</p>
+            </div>
+
+            <!-- Project Filter Category Buttons -->
+            <div class="filter-tabs" id="project-filter-tabs">
+                <button class="filter-btn active" data-project-filter="all">All Projects</button>
+                <button class="filter-btn" data-project-filter="ai">AI & Smart Tools</button>
+                <button class="filter-btn" data-project-filter="fullstack">Full-Stack MERN</button>
+                <button class="filter-btn" data-project-filter="frontend">Frontend & APIs</button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: Farmo Grow -->
+                <div class="project-card" data-project-category="ai">
+                    <div class="project-banner">
+                        <img src="Images/AIImg.jpg" alt="Farmo Grow AI Application">
+                        <span class="project-badge">AI & Agriculture</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Farmo Grow — AI Farming Platform</h3>
+                        <p class="project-desc">
+                            An AI-powered smart agriculture assistant that empowers farmers with crop disease diagnosis, real-time climate recommendations, and AI-generated crop visuals. Features hands-free voice command support for convenient field insights.
                         </p>
-
-                        <a href="#" <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">AI Vision API</span>
+                            <span class="tech-tag">Voice Recognition</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-secondary">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="Images/AIImg.jpg">
-                    <div class="layer">
-                        <h3> Farmo Grwo</h3>
 
-                        <p>
-                            Our AI-powered farming app helps farmers boost crop production with smart data analysis,
-                            real-time recommendations, and AI-generated crop visuals. With integrated voice commands,
-                            farmers can easily access insights, check crop health, and get guidance hands-free,
-                            making farming smarter and more convenient.
+                <!-- Project 2: AI Mock Interview Tool (SIH Project) -->
+                <div class="project-card">
+                    <div class="project-banner">
+                        <img src="Images/SectionImg.png" alt="AI Mock Interview Tool - SIH">
+                        <span class="project-badge">SIH Finalist • AI Tool</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">AI Mock Interview Tool (Team Rebel)</h3>
+                        <p class="project-desc">
+                            Developed for the Smart India Hackathon to overcome student interview anxiety. Generates custom role-based questions, transcribes speech with Whisper AI, and delivers real-time scores and constructive actionable feedback.
                         </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenAI Whisper</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">NLP Scoring</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Images/SIH_PPT_Team_rebel[1].pdf" target="_blank" class="project-btn project-btn-primary">
+                                <i class="fa-solid fa-file-pdf"></i> View Pitch Deck
+                            </a>
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-secondary">
+                                <i class="fa-brands fa-github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                        <a href="#" <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <!-- Project 3: Ecommerce Platform -->
+                <div class="project-card">
+                    <div class="project-banner">
+                        <img src="Images/Java-or-Android.webp" alt="Full Stack E-Commerce Platform">
+                        <span class="project-badge">Full-Stack MERN</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">TrendMart — Modern E-Commerce</h3>
+                        <p class="project-desc">
+                            A full-stack e-commerce solution offering dynamic product catalogs, filtering, cart state management, secure customer checkout, user authentication, and an administrative inventory control dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">JWT Auth</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-secondary">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: News App -->
+                <div class="project-card">
+                    <div class="project-banner">
+                        <img src="Images/Project1Img.jpg" alt="PulseNews Application">
+                        <span class="project-badge">Web Application</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">PulseNews — Dynamic News Portal</h3>
+                        <p class="project-desc">
+                            A sleek and responsive news aggregator fetching real-time global news headlines across technology, business, science, and sports. Implements instant category filtering and search in a distraction-free interface.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">News API</span>
+                            <span class="tech-tag">JavaScript ES6</span>
+                            <span class="tech-tag">CSS3 Grid</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="project-btn project-btn-secondary">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button class="btn">See More</button>
-        </div>
-    </div>
 
-    <!-------------------------------------------------Contact----------------------------------->
-    <div id="contact">
+            <!-- GitHub CTA -->
+            <div class="projects-more-cta">
+                <a href="https://github.com/Saurabh-Singh33" target="_blank" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Explore More Repositories on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         CONTACT SECTION
+         ========================================================== -->
+    <section id="contact">
         <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-titile">Contact Me</h1>
-                    <p> <i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
-                    <p> <i class="fa-solid fa-phone"></i> 128461864</p>
-                    <div class="social-icons">
-                        <a href="https://twitter.com/SaurabhSin8534" target="_blank">
-                            <i class="fa-brands fa-square-x-twitter"></i>
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-envelope"></i> Connect</span>
+                <h2 class="section-title">Let's Build <span>Something Great</span></h2>
+                <p class="section-subtitle">Interested in collaborating, hiring, or discussing a project? Drop a message and I'll respond promptly.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left: Contact Details -->
+                <div class="contact-info">
+                    <p class="contact-desc">
+                        I am currently open to <strong>full-time developer positions</strong>, <strong>internships</strong>, and <strong>freelance collaborations</strong>. Whether you have an open role, an exciting idea, or simply want to connect, feel free to reach out!
+                    </p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:saurabhsingh.dev@gmail.com" class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Me</h4>
+                                <p>saurabhsingh.dev@gmail.com</p>
+                            </div>
                         </a>
-                        <a href="https://linkedin.com/in/saurabh-singh-b1b88a326" target="_blank">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Saurabh-Singh33" target="_blank">
-                            <i class="fa-brands fa-square-github"></i>
-                        </a>
-                        <a href="https://instagram.com/yourusername" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>India (Open to Remote & Relocation)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Availability</h4>
+                                <p>Immediate / Open to Opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Presence -->
+                    <div class="contact-social-wrap">
+                        <h4>Connect On Socials</h4>
+                        <div class="contact-social-links">
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" class="social-pill" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/saurabh-singh-b1b88a326" target="_blank" class="social-pill" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/SaurabhSin8534" target="_blank" class="social-pill" title="Twitter / X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="social-pill" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="Images/SIH_PPT_Team_rebel[1].pdf" target="_blank" class="btn btn-primary">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Download Resume / Deck</span>
                         </a>
                     </div>
-                    <a href="Images/AddCV"  download class="btn btn2">Download CV</a>
-
                 </div>
-                <div class="contact-right">
-                <form >
-                    <input type="text" name ="Name" placeholder="your name" required>
-                    <input type="email" name ="email" placeholder="your email" required>
-                     <textarea name="Message" rows="6" placeholder="your Message"></textarea>
-                     <button type="submit" class="btn btn2"> Submit</button>
-                </form>
+
+                <!-- Right: Interactive Form -->
+                <div class="contact-form-card">
+                    <h3>Send a Direct Message</h3>
+                    <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="Name" class="form-control" placeholder="e.g. Alex Johnson" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry / Opportunity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="Message" rows="5" class="form-control" placeholder="Tell me about your project, timeline, or open role..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    <div class="copyright"></div>
+    </section>
+
+    <!-- ==========================================================
+         FOOTER
+         ========================================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-text">Saurabh<span>.dev</span></span>
+                </div>
+                <ul class="footer-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Saurabh Singh. Built with passion, modern CSS, and vanilla JS.</p>
+                <p>Designed & Developed with <i class="fa-solid fa-heart"></i> from India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Interactive Toast Notification -->
+    <div class="toast-notice" id="toast-notice">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-msg">Thank you! Your message has been sent successfully.</span>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 
