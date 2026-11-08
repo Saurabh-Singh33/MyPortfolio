@@ -4,347 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAURABH.SYS — The Developer Archive | Saurabh Singh Rathore</title>
-    <meta name="description" content="SAURABH.SYS — Interactive developer archive and personal operating system of Saurabh Singh Rathore. Full-Stack Developer, B.Tech CSE, AI/ML Explorer.">
-    <meta name="theme-color" content="#06070a">
+    <title>Saurabh Singh Rathore | Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Saurabh Singh Rathore - Full-Stack Developer & Computer Science Engineering Student.">
+    <meta name="theme-color" content="#0a0a0c">
 
-    <!-- Fonts: JetBrains Mono & Space Grotesk -->
+    <!-- Fonts: Plus Jakarta Sans & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Main Stylesheet -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- ==========================================================================
-         BOOT SEQUENCE (INITIAL LOADING EXPERIENCE)
+         NAVIGATION
          ========================================================================== -->
-    <div id="boot-sequence" aria-label="System Boot Sequence">
-        <div class="boot-terminal-box">
-            <div class="boot-header">
-                <div class="window-dots">
-                    <span class="window-dot dot-red"></span>
-                    <span class="window-dot dot-yellow"></span>
-                    <span class="window-dot dot-green"></span>
-                </div>
-                <span>SAURABH.SYS // BOOT_LOADER_v2.6</span>
-                <span id="boot-timer">0.00s</span>
-            </div>
-            <div class="boot-body">
-                <div class="boot-logs" id="boot-logs">
-                    <div class="boot-line"><span class="system-id">[SYS]</span> INITIALIZING SAURABH.SYS KERNEL...</div>
-                </div>
-                <div class="boot-progress-wrapper">
-                    <div class="boot-progress-info">
-                        <span id="boot-status-text">Mounting subsystems...</span>
-                        <span id="boot-pct">0%</span>
-                    </div>
-                    <div class="boot-progress-bar">
-                        <div class="boot-progress-fill" id="boot-progress-fill"></div>
-                    </div>
-                    <div class="boot-skip-hint" id="boot-skip-btn">[ PRESS SPACE OR CLICK TO SKIP BOOT ]</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==========================================================================
-         TOP SYSTEM BAR (OS HEADER & NAVIGATION)
-         ========================================================================== -->
-    <header id="system-bar">
-        <div class="container system-bar-inner">
-            <!-- Left: Identity & Status -->
-            <a href="#identity" class="sys-identity">
-                <div class="sys-logo-badge">
-                    <span>SAURABH.SYS</span>
-                    <span class="sub-ver">v2.6</span>
-                </div>
-                <div class="sys-status-indicator">
-                    <span class="pulse-dot"></span>
-                    <span>ONLINE // READY</span>
-                </div>
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">
+                SAURABH<span>.</span>
             </a>
 
-            <!-- Center: Live Telemetry Clock -->
-            <div class="sys-telemetry">
-                <div class="clock-widget">
-                    <i class="fa-regular fa-clock"></i>
-                    <span id="sys-live-clock">--:--:-- IST</span>
-                </div>
-                <span class="mono-text" style="color: var(--text-dim);">LOC: IND // 28.61°N</span>
-            </div>
+            <!-- Desktop Links -->
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-            <!-- Right: Navigation Switches & Quick Actions -->
-            <nav class="sys-nav">
-                <a href="#identity" class="sys-nav-link active"><span class="nav-num">01:</span>ID</a>
-                <a href="#dossier" class="sys-nav-link"><span class="nav-num">02:</span>ABOUT</a>
-                <a href="#laboratory" class="sys-nav-link"><span class="nav-num">03:</span>ARCHIVE</a>
-                <a href="#toolkit" class="sys-nav-link"><span class="nav-num">04:</span>TOOLKIT</a>
-                <a href="#execution" class="sys-nav-link"><span class="nav-num">05:</span>PROOF</a>
-                <a href="#terminal" class="sys-nav-link"><span class="nav-num">06:</span>CLI</a>
-                <a href="#contact" class="sys-nav-link"><span class="nav-num">07:</span>COMM</a>
-            </nav>
-
-            <div class="sys-actions">
-                <button class="sys-btn-terminal" id="toggle-cli-btn" title="Open Interactive CLI Terminal (Key: T)">
-                    <i class="fa-solid fa-terminal"></i>
-                    <span>>_ CLI</span>
+            <!-- Nav Actions: Theme Toggle & Mobile Hamburger -->
+            <div class="nav-actions">
+                <button class="theme-btn" id="theme-toggle" aria-label="Toggle Light and Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
                 </button>
-                <button class="sys-theme-toggle" id="theme-toggle-btn" title="Toggle Accent Variant (Cyan / Emerald / Amber)">
-                    <i class="fa-solid fa-palette"></i>
-                </button>
-                <button class="sys-mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Navigation Drawer">
-                    <i class="fa-solid fa-bars"></i>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <ul class="mobile-nav-list">
-            <li><a href="#identity" class="active">[01] PERSONAL IDENTITY</a></li>
-            <li><a href="#dossier">[02] THE HUMAN DOSSIER</a></li>
-            <li><a href="#laboratory">[03] PROJECT LABORATORY</a></li>
-            <li><a href="#toolkit">[04] TECHNICAL TOOLKIT</a></li>
-            <li><a href="#execution">[05] PROOF OF EXECUTION</a></li>
-            <li><a href="#terminal">[06] COMMAND TERMINAL</a></li>
-            <li><a href="#contact">[07] ESTABLISH COMM</a></li>
-        </ul>
-        <div class="mobile-drawer-footer mono-text" style="font-size: 0.75rem; color: var(--text-dim);">
-            <span>SAURABH.SYS v2.6 // ARCHIVE</span><br>
-            <span>GITHUB: Saurabh-Singh33</span>
-        </div>
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
     </div>
 
     <!-- ==========================================================================
-         MAIN INTERFACE CONTAINER
+         MAIN CONTENT
          ========================================================================== -->
     <main>
         <!-- ==========================================================================
-             SECTION 1: HERO / OPERATIVE DOSSIER
+             HERO SECTION
              ========================================================================== -->
-        <section id="identity" class="section-wrapper">
+        <section id="home" class="hero">
             <div class="container">
                 <div class="hero-grid">
-                    <!-- Left Hero Content -->
+                    <!-- Left Side: Content -->
                     <div class="hero-content">
-                        <div class="hero-telemetry-badge">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <span>TELEMETRY VERIFIED // SYSTEM READY FOR HIRE</span>
-                        </div>
-
-                        <div class="hero-name-label">OPERATIVE PROFILE // DEV-ARCHIVE</div>
-                        <h1 class="hero-display-name">SAURABH SINGH RATHORE</h1>
-
-                        <div class="hero-subtitle-bar">
-                            <span>B.Tech Computer Science Engineering Student</span>
-                            <span class="badge-pill">Full-Stack Developer</span>
-                            <span class="badge-pill">Software Developer</span>
-                            <span class="badge-pill">AI/ML Explorer</span>
-                        </div>
-
-                        <!-- Main Core Statement Card -->
-                        <div class="hero-statement-card">
-                            <h3>"I DON'T JUST WRITE CODE.<br>I BUILD THINGS THAT WORK."</h3>
-                            <p>
-                                I am a computer science student passionate about engineering practical software, 
-                                exploring new technologies and turning ideas into functional digital products.
-                            </p>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="hero-action-row">
-                            <a href="#laboratory" class="btn-sys btn-sys-primary">
-                                <i class="fa-solid fa-box-archive"></i>
-                                <span>VIEW ARCHIVE (PROJECTS)</span>
-                            </a>
-                            <a href="#contact" class="btn-sys btn-sys-outline">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>GET IN TOUCH</span>
-                            </a>
-                            <button class="btn-sys btn-sys-outline" id="hero-cli-trigger">
-                                <i class="fa-solid fa-terminal"></i>
-                                <span>OPEN TERMINAL (>_)</span>
-                            </button>
-                        </div>
-
-                        <!-- Social Presence Matrix -->
-                        <div class="hero-social-matrix">
-                            <span>EXTERNAL CHANNELS:</span>
-                            <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="hero-social-link">
-                                <i class="fa-brands fa-github"></i>
-                                <span>GitHub ↗</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/saurabh-singh-b1b88a326/" target="_blank" rel="noopener noreferrer" class="hero-social-link">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span>LinkedIn ↗</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right Hero Profile Dossier Card -->
-                    <div class="hero-dossier-wrap">
-                        <div class="dossier-card">
-                            <!-- Window Header -->
-                            <div class="os-header">
-                                <div class="os-title">
-                                    <i class="fa-solid fa-id-card-clip"></i>
-                                    <span>SYS://BIOMETRIC/DOSSIER_01.RAW</span>
-                                </div>
-                                <div class="os-controls">
-                                    <span>[ − ]</span>
-                                    <span>[ □ ]</span>
-                                    <span>[ ✕ ]</span>
-                                </div>
-                            </div>
-
-                            <!-- Portrait Frame with Corner Reticles -->
-                            <div class="dossier-portrait-wrap">
-                                <div class="reticle-tl"></div>
-                                <div class="reticle-tr"></div>
-                                <div class="reticle-bl"></div>
-                                <div class="reticle-br"></div>
-
-                                <img src="Images/HeaderPic.jpg" alt="Saurabh Singh Rathore — Developer Dossier" onerror="this.src='Images/SectionImg.png'">
-
-                                <div class="dossier-telemetry-overlay">
-                                    <div class="dossier-meta-item">
-                                        <span class="meta-lbl">IDENTITY</span>
-                                        <span class="meta-val">SAURABH SINGH RATHORE</span>
-                                    </div>
-                                    <div class="dossier-meta-item" style="text-align: right;">
-                                        <span class="meta-lbl">ACADEMIC STATUS</span>
-                                        <span class="meta-val" style="color: var(--accent-emerald);">B.TECH CSE (ACTIVE)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Technical Specs List -->
-                            <div class="dossier-specs-list">
-                                <div class="dossier-spec-row">
-                                    <span class="spec-key">DISCIPLINE:</span>
-                                    <span class="spec-val">Computer Science & Engineering</span>
-                                </div>
-                                <div class="dossier-spec-row">
-                                    <span class="spec-key">CORE STACK:</span>
-                                    <span class="spec-val">MERN / Next.js / Python / Java</span>
-                                </div>
-                                <div class="dossier-spec-row">
-                                    <span class="spec-key">PRIMARY FOCUS:</span>
-                                    <span class="spec-val">Full-Stack Systems & Applied AI</span>
-                                </div>
-                                <div class="dossier-spec-row">
-                                    <span class="spec-key">AVAILABILITY:</span>
-                                    <span class="spec-val" style="color: var(--accent-emerald);">OPEN FOR ROLES & INTERNSHIPS</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             SECTION 2: ABOUT — THE HUMAN BEHIND THE CODE
-             ========================================================================== -->
-        <section id="dossier" class="section-wrapper">
-            <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 02 // DOSSIER <span class="tag-bracket">]</span>
-                </div>
-                <h2 class="section-heading">THE HUMAN <span class="accent-highlight">BEHIND THE CODE</span></h2>
-                <p class="section-desc">
-                    Engineering philosophy, background, and the development timeline that shaped my approach to software.
-                </p>
-
-                <div class="about-layout">
-                    <!-- Left: Personal Narrative & Principles -->
-                    <div class="os-window about-narrative-card">
-                        <div class="about-lead-para">
-                            I don't treat software engineering as an academic checklist. I treat it as an instrument for building tangible, reliable digital infrastructure that solves real friction.
-                        </div>
-                        <p class="about-sub-para">
-                            My journey in Computer Science Engineering is anchored in a relentless curiosity: understanding what happens behind the abstractions. 
-                            From designing scalable full-stack web applications with React, Node.js, and MongoDB, to exploring Retrieval-Augmented Generation (RAG) and speech recognition systems, 
-                            I learn fastest by getting my hands dirty and shipping working prototypes.
+                        <div class="hero-intro">HELLO, I'M</div>
+                        <h1 class="hero-title">SAURABH SINGH RATHORE</h1>
+                        <h2 class="hero-designation">Full-Stack Developer & Computer Science Engineering Student</h2>
+                        <p class="hero-desc">
+                            "I enjoy building practical web applications, exploring modern technologies and turning ideas into useful digital products."
                         </p>
 
-                        <!-- Engineering Values Grid -->
-                        <div class="about-values-grid">
-                            <div class="value-card">
-                                <div class="value-icon"><i class="fa-solid fa-code-merge"></i></div>
-                                <div class="value-details">
-                                    <h4>Pragmatic Engineering Over Hype</h4>
-                                    <p>I choose architectures and tools that reliably solve the user's actual problem rather than chasing transient trends.</p>
-                                </div>
-                            </div>
-                            <div class="value-card">
-                                <div class="value-icon"><i class="fa-solid fa-microchip"></i></div>
-                                <div class="value-details">
-                                    <h4>Systems-First Thinking</h4>
-                                    <p>Clean REST API contracts, structured database schemas, and optimized state flow are the backbone of sustainable software.</p>
-                                </div>
-                            </div>
-                            <div class="value-card">
-                                <div class="value-icon"><i class="fa-solid fa-flask-vial"></i></div>
-                                <div class="value-details">
-                                    <h4>Curiosity-Driven AI Exploration</h4>
-                                    <p>Exploring practical AI/ML integrations—like semantic RAG retrieval, speech-to-text models, and desktop automation.</p>
-                                </div>
-                            </div>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">
+                                <span>View My Work</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                <span>Contact Me</span>
+                            </a>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="hero-socials">
+                            <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub Profile">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/saurabh-singh-b1b88a326/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Right: Development Timeline Stream -->
-                    <div class="os-window timeline-card">
-                        <h3 class="card-title">
-                            <i class="fa-solid fa-timeline" style="color: var(--accent-primary);"></i>
-                            <span>CHRONOLOGICAL DEVELOPMENT TIMELINE</span>
-                        </h3>
+                    <!-- Right Side: Prominent Clean Portrait -->
+                    <div class="hero-image-wrap">
+                        <div class="hero-image-card">
+                            <img src="Images/HeaderPic.jpg" alt="Saurabh Singh Rathore">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="timeline-stream">
-                            <!-- 2025 Node -->
-                            <div class="timeline-entry active-node">
-                                <div class="timeline-year">
-                                    <span>2025 — PRESENT</span>
-                                    <span class="status-pill-sm">CURRENT PHASE</span>
-                                </div>
-                                <h4 class="timeline-title">Applied AI, RAG & National Hackathons</h4>
-                                <p class="timeline-desc">
-                                    Engineered AI-driven tools including <strong>PaperReader-RAG</strong> and <strong>Aaroh Voice Assistant</strong>. 
-                                    Won/Finalist at a National Level Hackathon with Team Rebel, delivering an AI speech-to-text interview coach with OpenAI Whisper.
-                                </p>
+        <!-- ==========================================================================
+             ABOUT SECTION
+             ========================================================================== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">DISCOVER</span>
+                    <h2 class="section-title">ABOUT ME</h2>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Left: Secondary Photograph -->
+                    <div class="about-image-card">
+                        <img src="Images/SectionImg.png" alt="Saurabh Workspace">
+                    </div>
+
+                    <!-- Right: Text & Details -->
+                    <div class="about-content">
+                        <p class="about-text">
+                            I am a Computer Science Engineering student with a strong interest in full-stack development and software engineering. I enjoy learning new technologies and applying them to real-world projects. My focus is on developing practical applications, improving my problem-solving skills and continuously growing as a developer.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-box">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h4>B.Tech in CSE</h4>
+                                <p>Marwadi University</p>
                             </div>
-
-                            <!-- 2024 Node -->
-                            <div class="timeline-entry">
-                                <div class="timeline-year">
-                                    <span>2024</span>
-                                </div>
-                                <h4 class="timeline-title">Full-Stack & WebRTC Systems Architecture</h4>
-                                <p class="timeline-desc">
-                                    Architected production-ready platforms including <strong>Medicare</strong> (doctor-patient management system) and 
-                                    <strong>VartaConnect</strong> (real-time WebRTC multi-peer video meetings and synchronized collaborative whiteboard).
-                                </p>
+                            <div class="highlight-box">
+                                <i class="fa-solid fa-code"></i>
+                                <h4>Full-Stack Development</h4>
+                                <p>MERN Stack & Next.js</p>
                             </div>
-
-                            <!-- 2023 Node -->
-                            <div class="timeline-entry">
-                                <div class="timeline-year">
-                                    <span>2023</span>
-                                </div>
-                                <h4 class="timeline-title">Foundation & Algorithmic Problem Solving</h4>
-                                <p class="timeline-desc">
-                                    Initiated B.Tech in Computer Science and Engineering. Mastered fundamental computer science pillars: 
-                                    Data Structures & Algorithms in Java & C, Object-Oriented Programming (OOPs), and Operating System concepts.
-                                </p>
+                            <div class="highlight-box">
+                                <i class="fa-solid fa-brain"></i>
+                                <h4>AI & Machine Learning</h4>
+                                <p>RAG & Speech Technologies</p>
+                            </div>
+                            <div class="highlight-box">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <h4>Problem Solving</h4>
+                                <p>Data Structures & Algorithms</p>
                             </div>
                         </div>
                     </div>
@@ -353,368 +165,119 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 3: PROJECTS — THE PROJECT LABORATORY
+             SKILLS SECTION
              ========================================================================== -->
-        <section id="laboratory" class="section-wrapper">
+        <section id="skills" class="section">
             <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 03 // LABORATORY <span class="tag-bracket">]</span>
-                </div>
-                <h2 class="section-heading">THE PROJECT <span class="accent-highlight">LABORATORY</span></h2>
-                <p class="section-desc">
-                    Verified digital artifacts and production systems engineered to solve real-world operational problems.
-                </p>
-
-                <!-- Filter Row -->
-                <div class="lab-filter-row">
-                    <span class="mono-text" style="font-size: 0.75rem; color: var(--text-dim); margin-right: 8px;">FILTER MATRIX:</span>
-                    <button class="lab-filter-btn active" data-filter="all">ALL [4]</button>
-                    <button class="lab-filter-btn" data-filter="ai">AI & RAG [2]</button>
-                    <button class="lab-filter-btn" data-filter="fullstack">FULL-STACK [2]</button>
-                    <button class="lab-filter-btn" data-filter="systems">REAL-TIME & SYSTEMS [1]</button>
+                <div class="section-header">
+                    <span class="section-subtitle">CAPABILITIES</span>
+                    <h2 class="section-title">MY TECHNICAL SKILLS</h2>
                 </div>
 
-                <!-- Artifacts Grid -->
-                <div class="artifacts-grid" id="artifacts-grid">
-                    <!-- Project A: VartaConnect -->
-                    <div class="artifact-card" data-category="systems">
-                        <div class="artifact-header">
-                            <span class="artifact-id"><i class="fa-solid fa-video"></i> ARTIFACT_01 // REAL-TIME</span>
-                            <span class="artifact-tag">WebRTC & WebSockets</span>
-                        </div>
-                        <div class="artifact-body">
-                            <div class="artifact-title">
-                                <span>VartaConnect</span>
-                                <span class="mono-text" style="font-size: 0.75rem; color: var(--accent-emerald);">● ACTIVE SPEC</span>
+                <div class="skills-container">
+                    <!-- Category: Programming -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title"><i class="fa-solid fa-terminal"></i> Programming</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/C.png" alt="C Language"></div>
+                                <span class="skill-name">C</span>
                             </div>
-                            <p class="artifact-desc">
-                                A real-time communication and video meeting platform featuring instant meeting rooms and a live collaborative canvas whiteboard.
-                            </p>
-
-                            <div class="artifact-problem-box">
-                                <strong>PROBLEM SOLVED:</strong>
-                                Eliminates friction in spontaneous engineering standups by combining video, audio, and synchronized canvas diagramming without complex software downloads.
-                            </div>
-
-                            <div class="artifact-tech-stack">
-                                <span class="tech-chip">React</span>
-                                <span class="tech-chip">Node.js</span>
-                                <span class="tech-chip">WebSockets</span>
-                                <span class="tech-chip">WebRTC</span>
-                                <span class="tech-chip">Canvas API</span>
-                                <span class="tech-chip">Express</span>
-                            </div>
-
-                            <div class="artifact-actions">
-                                <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="artifact-link link-primary">
-                                    <i class="fa-brands fa-github"></i> Repository ↗
-                                </a>
-                                <button class="btn-inspect" onclick="inspectProject('vartaconnect')">
-                                    <i class="fa-solid fa-magnifying-glass"></i> INSPECT SPEC
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project B: Medicare -->
-                    <div class="artifact-card" data-category="fullstack">
-                        <div class="artifact-header">
-                            <span class="artifact-id"><i class="fa-solid fa-stethoscope"></i> ARTIFACT_02 // HEALTHCARE</span>
-                            <span class="artifact-tag">Full-Stack MERN</span>
-                        </div>
-                        <div class="artifact-body">
-                            <div class="artifact-title">
-                                <span>Medicare</span>
-                                <span class="mono-text" style="font-size: 0.75rem; color: var(--accent-cyan);">● LIVE SYSTEM</span>
-                            </div>
-                            <p class="artifact-desc">
-                                Full-stack doctor appointment and healthcare management platform connecting patients, doctors, and clinic administrators in one unified system.
-                            </p>
-
-                            <div class="artifact-problem-box">
-                                <strong>PROBLEM SOLVED:</strong>
-                                Replaces disjointed paper medical appointments with real-time slot booking, doctor availability management, and secure medical document uploads.
-                            </div>
-
-                            <div class="artifact-tech-stack">
-                                <span class="tech-chip">MongoDB</span>
-                                <span class="tech-chip">Express.js</span>
-                                <span class="tech-chip">React</span>
-                                <span class="tech-chip">Node.js</span>
-                                <span class="tech-chip">Cloudinary</span>
-                                <span class="tech-chip">JWT Auth</span>
-                            </div>
-
-                            <div class="artifact-actions">
-                                <a href="https://mymedicareapp.vercel.app/" target="_blank" rel="noopener noreferrer" class="artifact-link link-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo ↗
-                                </a>
-                                <button class="btn-inspect" onclick="inspectProject('medicare')">
-                                    <i class="fa-solid fa-magnifying-glass"></i> INSPECT SPEC
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project C: PaperReader-RAG -->
-                    <div class="artifact-card" data-category="ai">
-                        <div class="artifact-header">
-                            <span class="artifact-id"><i class="fa-solid fa-book-bookmark"></i> ARTIFACT_03 // RAG ARCHITECTURE</span>
-                            <span class="artifact-tag">AI / Machine Learning</span>
-                        </div>
-                        <div class="artifact-body">
-                            <div class="artifact-title">
-                                <span>PaperReader-RAG</span>
-                                <span class="mono-text" style="font-size: 0.75rem; color: var(--accent-cyan);">● LIVE SYSTEM</span>
-                            </div>
-                            <p class="artifact-desc">
-                                AI-powered research paper reading and question-answering application powered by Retrieval-Augmented Generation for grounded academic inquiry.
-                            </p>
-
-                            <div class="artifact-problem-box">
-                                <strong>PROBLEM SOLVED:</strong>
-                                Reduces academic paper comprehension time from hours to minutes by allowing researchers to semantically query dense PDFs with direct citation backing.
-                            </div>
-
-                            <div class="artifact-tech-stack">
-                                <span class="tech-chip">Python / Next.js</span>
-                                <span class="tech-chip">LangChain</span>
-                                <span class="tech-chip">Vector Database</span>
-                                <span class="tech-chip">RAG Pipeline</span>
-                                <span class="tech-chip">PDF Parsing</span>
-                            </div>
-
-                            <div class="artifact-actions">
-                                <a href="https://paper-reader-rag-vgdh.vercel.app/" target="_blank" rel="noopener noreferrer" class="artifact-link link-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo ↗
-                                </a>
-                                <a href="https://github.com/Saurabh-Singh33/PaperReader-RAG" target="_blank" rel="noopener noreferrer" class="artifact-link">
-                                    <i class="fa-brands fa-github"></i> Repository ↗
-                                </a>
-                                <button class="btn-inspect" onclick="inspectProject('paperreader')">
-                                    <i class="fa-solid fa-magnifying-glass"></i> INSPECT SPEC
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project D: Aaroh Voice Assistant -->
-                    <div class="artifact-card" data-category="ai">
-                        <div class="artifact-header">
-                            <span class="artifact-id"><i class="fa-solid fa-microphone-lines"></i> ARTIFACT_04 // AUTOMATION</span>
-                            <span class="artifact-tag">Python & Speech AI</span>
-                        </div>
-                        <div class="artifact-body">
-                            <div class="artifact-title">
-                                <span>Aaroh Voice Assistant</span>
-                                <span class="mono-text" style="font-size: 0.75rem; color: var(--accent-emerald);">● VERIFIED REPO</span>
-                            </div>
-                            <p class="artifact-desc">
-                                Desktop AI voice assistant delivering hands-free operating system automation, wake-word detection, speech recognition, and task execution.
-                            </p>
-
-                            <div class="artifact-problem-box">
-                                <strong>PROBLEM SOLVED:</strong>
-                                Enables developers and users to trigger local operating system workflows, voice-to-command routines, and search queries hands-free.
-                            </div>
-
-                            <div class="artifact-tech-stack">
-                                <span class="tech-chip">Python</span>
-                                <span class="tech-chip">SpeechRecognition</span>
-                                <span class="tech-chip">Pyttsx3 (TTS)</span>
-                                <span class="tech-chip">OS Automation</span>
-                                <span class="tech-chip">NLP Parser</span>
-                            </div>
-
-                            <div class="artifact-actions">
-                                <a href="https://github.com/Saurabh-Singh33/Aaroh-voice-assistant" target="_blank" rel="noopener noreferrer" class="artifact-link link-primary">
-                                    <i class="fa-brands fa-github"></i> Repository ↗
-                                </a>
-                                <button class="btn-inspect" onclick="inspectProject('aaroh')">
-                                    <i class="fa-solid fa-magnifying-glass"></i> INSPECT SPEC
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             SECTION 4: TECHNICAL SKILLS — MY TOOLKIT
-             ========================================================================== -->
-        <section id="toolkit" class="section-wrapper">
-            <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 04 // TOOLKIT <span class="tag-bracket">]</span>
-                </div>
-                <h2 class="section-heading">TECHNICAL <span class="accent-highlight">CAPABILITY MATRIX</span></h2>
-                <p class="section-desc">
-                    Categorized breakdown of technologies, frameworks, and developer tooling utilized across production builds. Zero fake percentages—strictly engineered competence.
-                </p>
-
-                <div class="toolkit-matrix">
-                    <!-- Cluster 1: Frontend Technologies -->
-                    <div class="toolkit-cluster">
-                        <div class="cluster-header">
-                            <div class="cluster-title">
-                                <i class="fa-solid fa-desktop" style="color: var(--accent-primary);"></i>
-                                <span>FRONTEND ARCHITECTURE & LIBRARIES</span>
-                            </div>
-                            <span class="cluster-count">[07 MODULES]</span>
-                        </div>
-                        <div class="cluster-grid">
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/html.png" alt="HTML5"></div>
-                                <span class="skill-name">HTML5</span>
-                                <span class="skill-role-badge">Semantic Web</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/css.png" alt="CSS3"></div>
-                                <span class="skill-name">CSS3</span>
-                                <span class="skill-role-badge">Modern Styling</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/js.png" alt="JavaScript"></div>
-                                <span class="skill-name">JavaScript</span>
-                                <span class="skill-role-badge">Core ES6+</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/react.png" alt="React"></div>
-                                <span class="skill-name">React</span>
-                                <span class="skill-role-badge">UI Library</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/nextjs.png" alt="Next.js"></div>
-                                <span class="skill-name">Next.js</span>
-                                <span class="skill-role-badge">Full-Stack SSR</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Tailwind.png" alt="Tailwind CSS"></div>
-                                <span class="skill-name">Tailwind CSS</span>
-                                <span class="skill-role-badge">Utility UI</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Bootstrap.png" alt="Bootstrap"></div>
-                                <span class="skill-name">Bootstrap</span>
-                                <span class="skill-role-badge">Responsive Grid</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cluster 2: Backend & Server Systems -->
-                    <div class="toolkit-cluster">
-                        <div class="cluster-header">
-                            <div class="cluster-title">
-                                <i class="fa-solid fa-server" style="color: var(--accent-emerald);"></i>
-                                <span>BACKEND & SERVER ENGINEERING</span>
-                            </div>
-                            <span class="cluster-count">[04 MODULES]</span>
-                        </div>
-                        <div class="cluster-grid">
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/node.png" alt="Node.js"></div>
-                                <span class="skill-name">Node.js</span>
-                                <span class="skill-role-badge">Async Runtime</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Express.png" alt="Express.js"></div>
-                                <span class="skill-name">Express.js</span>
-                                <span class="skill-role-badge">REST API Router</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/java.png" alt="Java"></div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/java.png" alt="Java"></div>
                                 <span class="skill-name">Java</span>
-                                <span class="skill-role-badge">Enterprise Logic</span>
                             </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Springboot.png" alt="Spring Boot"></div>
-                                <span class="skill-name">Spring Boot</span>
-                                <span class="skill-role-badge">Microservices</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cluster 3: Databases & Data Stores -->
-                    <div class="toolkit-cluster">
-                        <div class="cluster-header">
-                            <div class="cluster-title">
-                                <i class="fa-solid fa-database" style="color: var(--accent-amber);"></i>
-                                <span>DATABASES & PERSISTENCE</span>
-                            </div>
-                            <span class="cluster-count">[02 MODULES]</span>
-                        </div>
-                        <div class="cluster-grid">
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/MONGODB.jpg" alt="MongoDB"></div>
-                                <span class="skill-name">MongoDB</span>
-                                <span class="skill-role-badge">NoSQL Document Store</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/mysql.png" alt="MySQL"></div>
-                                <span class="skill-name">MySQL</span>
-                                <span class="skill-role-badge">Relational SQL Store</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cluster 4: Programming Languages & Core Logic -->
-                    <div class="toolkit-cluster">
-                        <div class="cluster-header">
-                            <div class="cluster-title">
-                                <i class="fa-solid fa-terminal" style="color: var(--accent-violet);"></i>
-                                <span>LANGUAGES & PROBLEM SOLVING</span>
-                            </div>
-                            <span class="cluster-count">[04 MODULES]</span>
-                        </div>
-                        <div class="cluster-grid">
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/C.png" alt="C Language"></div>
-                                <span class="skill-name">C Language</span>
-                                <span class="skill-role-badge">Memory & Systems</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/java.png" alt="Java"></div>
-                                <span class="skill-name">Java</span>
-                                <span class="skill-role-badge">DSA & OOPs</span>
-                            </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/js.png" alt="JavaScript"></div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/js.png" alt="JavaScript"></div>
                                 <span class="skill-name">JavaScript</span>
-                                <span class="skill-role-badge">Async Web Logic</span>
                             </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><i class="fa-brands fa-python" style="font-size: 1.8rem; color: #38bdf8;"></i></div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><i class="fa-brands fa-python" style="font-size: 2rem; color: #38bdf8;"></i></div>
                                 <span class="skill-name">Python</span>
-                                <span class="skill-role-badge">AI, NLP & Scripting</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cluster 5: Tooling, Git & APIs -->
-                    <div class="toolkit-cluster">
-                        <div class="cluster-header">
-                            <div class="cluster-title">
-                                <i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-primary);"></i>
-                                <span>DEVELOPER TOOLING & PROTOCOLS</span>
+                    <!-- Category: Frontend -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title"><i class="fa-solid fa-desktop"></i> Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/html.png" alt="HTML"></div>
+                                <span class="skill-name">HTML</span>
                             </div>
-                            <span class="cluster-count">[03 MODULES]</span>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/css.png" alt="CSS"></div>
+                                <span class="skill-name">CSS</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/react.png" alt="React"></div>
+                                <span class="skill-name">React</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/nextjs.png" alt="Next.js"></div>
+                                <span class="skill-name">Next.js</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Bootstrap.png" alt="Bootstrap"></div>
+                                <span class="skill-name">Bootstrap</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Tailwind.png" alt="Tailwind CSS"></div>
+                                <span class="skill-name">Tailwind CSS</span>
+                            </div>
                         </div>
-                        <div class="cluster-grid">
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Git.png" alt="Git"></div>
+                    </div>
+
+                    <!-- Category: Backend -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title"><i class="fa-solid fa-server"></i> Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/node.png" alt="Node.js"></div>
+                                <span class="skill-name">Node.js</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Express.png" alt="Express.js"></div>
+                                <span class="skill-name">Express.js</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Springboot.png" alt="Spring Boot"></div>
+                                <span class="skill-name">Spring Boot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Database -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title"><i class="fa-solid fa-database"></i> Database</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/MONGODB.jpg" alt="MongoDB"></div>
+                                <span class="skill-name">MongoDB</span>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/mysql.png" alt="MySQL"></div>
+                                <span class="skill-name">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Tools -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Git.png" alt="Git"></div>
                                 <span class="skill-name">Git</span>
-                                <span class="skill-role-badge">Version Control</span>
                             </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><i class="fa-brands fa-github" style="font-size: 1.8rem; color: #f1f5f9;"></i></div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><i class="fa-brands fa-github" style="font-size: 2rem;"></i></div>
                                 <span class="skill-name">GitHub</span>
-                                <span class="skill-role-badge">CI/CD & Workflows</span>
                             </div>
-                            <div class="skill-pod">
-                                <div class="skill-icon-frame"><img src="Images/Postman.png" alt="Postman"></div>
+                            <div class="skill-card">
+                                <div class="skill-icon-wrap"><img src="Images/Postman.png" alt="Postman"></div>
                                 <span class="skill-name">Postman</span>
-                                <span class="skill-role-badge">API Integration</span>
                             </div>
                         </div>
                     </div>
@@ -723,245 +286,181 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 5: ACHIEVEMENTS & PROOF OF EXECUTION
+             PROJECTS SECTION
              ========================================================================== -->
-        <section id="execution" class="section-wrapper">
+        <section id="projects" class="section">
             <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 05 // VERIFICATION <span class="tag-bracket">]</span>
+                <div class="section-header">
+                    <span class="section-subtitle">PORTFOLIO</span>
+                    <h2 class="section-title">MY PROJECTS</h2>
                 </div>
-                <h2 class="section-heading">PROOF OF <span class="accent-highlight">EXECUTION</span></h2>
-                <p class="section-desc">
-                    Verified milestone achievements, hackathon competitive victories, and tangible software engineering benchmarks.
-                </p>
 
-                <div class="proof-layout">
-                    <!-- Prominent Hackathon Feature Card -->
-                    <div class="hackathon-feature-card">
-                        <div class="hackathon-banner">
-                            <div class="badge-national">
-                                <i class="fa-solid fa-trophy"></i>
-                                <span>NATIONAL LEVEL HACKATHON WINNER // FINALIST</span>
-                            </div>
-                            <span class="hackathon-id-tag mono-text">TEAM ID: SPT-61</span>
+                <div class="projects-grid">
+                    <!-- Project 1: VartaConnect -->
+                    <div class="project-card">
+                        <div class="project-preview">
+                            <img src="Images/Project1Img.jpg" alt="VartaConnect">
                         </div>
-
-                        <div class="hackathon-content">
-                            <h3 class="hackathon-title">Smart India Hackathon (SIH) — Team Rebel</h3>
-                            <div class="hackathon-meta">
-                                <span><i class="fa-solid fa-users"></i> TEAM REBEL</span>
-                                <span><i class="fa-solid fa-calendar"></i> COMPETITIVE ENGINEERING CHALLENGE</span>
-                            </div>
-
-                            <p class="hackathon-desc">
-                                Spearheaded development of an <strong>AI-Based Mock Interview Platform</strong> engineered to eliminate interview anxiety for engineering students. 
-                                Designed dynamic role-based question generators, speech-to-text audio processing via OpenAI Whisper, and real-time constructive performance scoring.
+                        <div class="project-body">
+                            <h3 class="project-title">VartaConnect</h3>
+                            <p class="project-desc">
+                                A real-time communication and video meeting platform with meeting rooms and interactive collaboration features.
                             </p>
-
-                            <ul class="hackathon-deliverables">
-                                <li>
-                                    <i class="fa-solid fa-check"></i>
-                                    <span>Built an end-to-end full stack web architecture with speech transcription.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check"></i>
-                                    <span>Pitched and demonstrated live real-time scoring in front of national jury.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-check"></i>
-                                    <span>Engineered completely peer-independent, affordable AI evaluation workflow.</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Quantitative Engineering Milestones Column -->
-                    <div class="proof-metrics-column">
-                        <div class="metric-panel">
-                            <div class="metric-num-display">500<span class="unit">+</span></div>
-                            <div class="metric-details">
-                                <h4>Algorithmic DSA Problems</h4>
-                                <p>Extensive practice in Java & C across LeetCode and GeeksforGeeks, mastering tree traversals, graphs, and dynamic programming.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">WebSockets</span>
+                                <span class="tech-badge">WebRTC</span>
                             </div>
-                        </div>
-
-                        <div class="metric-panel">
-                            <div class="metric-num-display">4<span class="unit">+</span></div>
-                            <div class="metric-details">
-                                <h4>Deployed Web Applications</h4>
-                                <p>Live, production-deployed web systems with active user workflows, Cloudinary integration, and Vercel hosting.</p>
-                            </div>
-                        </div>
-
-                        <div class="metric-panel">
-                            <div class="metric-num-display">B.Tech<span class="unit">.CSE</span></div>
-                            <div class="metric-details">
-                                <h4>Undergraduate CS Foundation</h4>
-                                <p>Formal academic training in Operating Systems, Database Management Systems (DBMS), OOPs, and Computer Networks.</p>
+                            <div class="project-actions">
+                                <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ==========================================================================
-             SECTION 6: INTERACTIVE COMMAND TERMINAL
-             ========================================================================== -->
-        <section id="terminal" class="section-wrapper">
-            <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 06 // CONSOLE <span class="tag-bracket">]</span>
-                </div>
-                <h2 class="section-heading">INTERACTIVE <span class="accent-highlight">COMMAND TERMINAL</span></h2>
-                <p class="section-desc">
-                    Query system telemetry directly via the integrated command interface. Type commands or click the chips below.
-                </p>
-
-                <!-- Terminal Window Wrapper -->
-                <div class="terminal-window-wrapper">
-                    <div class="terminal-header">
-                        <div class="window-dots">
-                            <span class="window-dot dot-red"></span>
-                            <span class="window-dot dot-yellow"></span>
-                            <span class="window-dot dot-green"></span>
+                    <!-- Project 2: Medicare -->
+                    <div class="project-card">
+                        <div class="project-preview">
+                            <img src="Images/Java-or-Android.webp" alt="Medicare">
                         </div>
-                        <span>saurabh@archive: ~ (bash / interactive)</span>
-                        <span>UTF-8 // READY</span>
-                    </div>
-
-                    <!-- Terminal Interactive Output Body -->
-                    <div class="terminal-body" id="terminal-screen">
-                        <div class="terminal-history" id="terminal-history">
-                            <div class="terminal-output-block">
-                                <p class="cmd-highlight">SAURABH.SYS [Version 2.6.4] — Command Shell Active</p>
-                                <p class="cmd-success">Type 'help' to review available system operations.</p>
-                            </div>
-                        </div>
-
-                        <!-- Active Input Row -->
-                        <div class="terminal-input-row">
-                            <span class="terminal-prompt-label">saurabh@archive:<span class="cwd">~</span>$</span>
-                            <input type="text" id="terminal-input" class="terminal-input-field" autocomplete="off" spellcheck="false" autofocus placeholder="Type a command (e.g. help, projects, skills, contact)...">
-                        </div>
-                    </div>
-
-                    <!-- Clickable Suggestion Chips -->
-                    <div class="terminal-suggestions-bar">
-                        <span>QUICK DISPATCH:</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('help')">help</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('about')">about</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('projects')">projects</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('skills')">skills</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('proof')">proof</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('contact')">contact</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('github')">github</span>
-                        <span class="suggestion-chip" onclick="executeCLICommand('clear')">clear</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================================================
-             SECTION 7: CONTACT — ESTABLISH CONNECTION
-             ========================================================================== -->
-        <section id="contact" class="section-wrapper">
-            <div class="container">
-                <div class="section-spec-bar">
-                    <span class="tag-bracket">[</span> SECTION: 07 // COMM <span class="tag-bracket">]</span>
-                </div>
-                <h2 class="section-heading">ESTABLISH <span class="accent-highlight">CONNECTION</span></h2>
-                <p class="section-desc">
-                    Direct communication dispatch. Reach out for engineering roles, software projects, or technical collaboration.
-                </p>
-
-                <div class="contact-layout">
-                    <!-- Left: Verified Direct Channels -->
-                    <div class="os-window contact-dispatch-box">
-                        <div>
-                            <div class="contact-status-flag">
-                                <span class="pulse-dot"></span>
-                                <span>STATUS: AVAILABLE FOR NEW OPPORTUNITIES</span>
-                            </div>
-                            <h3 class="contact-main-headline">"HAVE AN IDEA?<br>LET'S BUILD IT."</h3>
-                            <p class="contact-support-text">
-                                Whether you're hiring an engineering intern, looking for a full-stack developer, 
-                                or want to brainstorm practical AI tools, I respond to all authentic inquiries.
+                        <div class="project-body">
+                            <h3 class="project-title">Medicare</h3>
+                            <p class="project-desc">
+                                A full-stack healthcare application that allows users to explore doctors and manage appointments.
                             </p>
-                        </div>
-
-                        <div class="contact-channels-stream">
-                            <!-- Email Node with Direct Mailto + Copy -->
-                            <div class="contact-node-link">
-                                <div class="node-left">
-                                    <div class="node-icon-box"><i class="fa-solid fa-envelope"></i></div>
-                                    <div>
-                                        <div class="node-text-title">Direct Email Dispatch</div>
-                                        <div class="node-text-sub">saurabhsingh.dev@gmail.com</div>
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 8px;">
-                                    <button class="btn-sys btn-sys-outline" style="padding: 4px 10px; font-size: 0.72rem;" onclick="copyEmailToClipboard()">
-                                        <i class="fa-regular fa-copy"></i> Copy
-                                    </button>
-                                    <a href="mailto:saurabhsingh.dev@gmail.com?subject=Project%20Inquiry%20via%20Portfolio" class="btn-sys btn-sys-primary" style="padding: 4px 10px; font-size: 0.72rem;">
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Mail
-                                    </a>
-                                </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Express.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Tailwind CSS</span>
                             </div>
-
-                            <!-- LinkedIn Node -->
-                            <a href="https://www.linkedin.com/in/saurabh-singh-b1b88a326/" target="_blank" rel="noopener noreferrer" class="contact-node-link">
-                                <div class="node-left">
-                                    <div class="node-icon-box"><i class="fa-brands fa-linkedin"></i></div>
-                                    <div>
-                                        <div class="node-text-title">LinkedIn Professional Profile</div>
-                                        <div class="node-text-sub">in/saurabh-singh-b1b88a326</div>
-                                    </div>
-                                </div>
-                                <span class="node-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                            </a>
-
-                            <!-- GitHub Node -->
-                            <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="contact-node-link">
-                                <div class="node-left">
-                                    <div class="node-icon-box"><i class="fa-brands fa-github"></i></div>
-                                    <div>
-                                        <div class="node-text-title">GitHub Developer Profile</div>
-                                        <div class="node-text-sub">github.com/Saurabh-Singh33</div>
-                                    </div>
-                                </div>
-                                <span class="node-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-                            </a>
+                            <div class="project-actions">
+                                <a href="https://mymedicareapp.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live
+                                </a>
+                                <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Right: Functional Mail Dispatch Composer -->
-                    <div class="os-window mail-composer-card">
-                        <h3 class="composer-title">TRANSMIT DIRECT DISPATCH</h3>
-                        <p class="composer-subtitle">Composes a verified, pre-filled mail dispatch directly to your default email client.</p>
-
-                        <form id="mail-dispatch-form" class="composer-form" onsubmit="handleMailDispatch(event)">
-                            <div class="form-group-sys">
-                                <label for="sender-name">SENDER_NAME // IDENTIFIER</label>
-                                <input type="text" id="sender-name" class="form-input-sys" placeholder="e.g. Elena Vance" required>
+                    <!-- Project 3: PaperReader-RAG -->
+                    <div class="project-card">
+                        <div class="project-preview">
+                            <img src="Images/AIImg.jpg" alt="PaperReader-RAG">
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">PaperReader-RAG</h3>
+                            <p class="project-desc">
+                                An AI-powered application for interacting with research papers using Retrieval-Augmented Generation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">LangChain</span>
+                                <span class="tech-badge">Vector DB</span>
+                                <span class="tech-badge">RAG</span>
                             </div>
-
-                            <div class="form-group-sys">
-                                <label for="sender-subject">SUBJECT // TOPIC</label>
-                                <input type="text" id="sender-subject" class="form-input-sys" placeholder="e.g. Engineering Role / Full-Stack Project Inquiry" required>
+                            <div class="project-actions">
+                                <a href="https://paper-reader-rag-vgdh.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live
+                                </a>
+                                <a href="https://github.com/Saurabh-Singh33/PaperReader-RAG" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="form-group-sys">
-                                <label for="sender-message">DISPATCH_BODY // MESSAGE</label>
-                                <textarea id="sender-message" class="form-input-sys" placeholder="Detail your project, timeline, or engineering opportunity..." required></textarea>
+                    <!-- Project 4: Aaroh Voice Assistant -->
+                    <div class="project-card">
+                        <div class="project-preview">
+                            <img src="Images/SectionImg.png" alt="Aaroh Voice Assistant">
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Aaroh Voice Assistant</h3>
+                            <p class="project-desc">
+                                A Python-based voice assistant that performs desktop operations using voice commands.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">SpeechRecognition</span>
+                                <span class="tech-badge">Pyttsx3</span>
+                                <span class="tech-badge">OS Automation</span>
                             </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Saurabh-Singh33/Aaroh-voice-assistant" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-outline">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                            <button type="submit" class="btn-sys btn-sys-primary" style="width: 100%; justify-content: center;">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>SEND DISPATCH VIA MAIL CLIENT</span>
-                            </button>
-                        </form>
+        <!-- ==========================================================================
+             ACHIEVEMENTS SECTION
+             ========================================================================== -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">MILESTONES</span>
+                    <h2 class="section-title">ACHIEVEMENTS</h2>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="achievement-details">
+                        <span class="achievement-badge">COMPETITIVE MILESTONE</span>
+                        <h3>National Level Hackathon Winner</h3>
+                        <p>
+                            Winner / Finalist at a National Level Hackathon (Smart India Hackathon - Team Rebel). Developed an AI-powered mock interview system incorporating speech recognition and real-time performance evaluation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             CONTACT SECTION
+             ========================================================================== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header" style="text-align: center;">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">LET'S CONNECT</h2>
+                </div>
+
+                <div class="contact-card">
+                    <p class="contact-text">
+                        "I'm always interested in learning, collaborating and building meaningful projects. Feel free to connect with me."
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:saurabhsingh.dev@gmail.com" class="contact-action-btn btn-mail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>saurabhsingh.dev@gmail.com</span>
+                        </a>
+                        <button class="contact-action-btn btn-social" onclick="copyEmail()" title="Copy Email">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy Email</span>
+                        </button>
+                        <a href="https://github.com/Saurabh-Singh33" target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-social">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/saurabh-singh-b1b88a326/" target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-social">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -969,47 +468,23 @@
     </main>
 
     <!-- ==========================================================================
-         PROJECT INSPECTION MODAL (DRAWER)
-         ========================================================================== -->
-    <div id="project-inspector-modal" aria-hidden="true" role="dialog">
-        <div class="inspector-dialog">
-            <div class="inspector-header">
-                <span class="mono-text" id="inspector-modal-id">SYS://LAB/INSPECT_SPEC</span>
-                <button class="inspector-close-btn" onclick="closeInspectorModal()" aria-label="Close Inspector">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="inspector-content" id="inspector-modal-body">
-                <!-- Dynamically Populated by script.js -->
-            </div>
-            <div class="inspector-footer" id="inspector-modal-footer">
-                <button class="btn-sys btn-sys-outline" onclick="closeInspectorModal()">[ ESC ] CLOSE</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==========================================================================
-         FOOTER & SYSTEM STATUS TELEMETRY
+         FOOTER
          ========================================================================== -->
     <footer>
-        <div class="container footer-inner">
-            <div class="footer-left">
-                <span class="footer-sys-id">SAURABH.SYS [v2.6]</span>
-                <span>// ALL SYSTEMS OPERATIONAL</span>
-            </div>
-            <div class="footer-center mono-text">
-                <span>DESIGNED & ENGINEERED BY SAURABH SINGH RATHORE</span>
-            </div>
-            <div class="footer-right mono-text">
-                <span>EST: 2026 // INDIA</span>
-            </div>
+        <div class="container">
+            <p>&copy; 2026 Saurabh Singh Rathore. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- System Toast Alert -->
-    <div class="sys-toast" id="sys-toast">
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
         <i class="fa-solid fa-circle-check"></i>
-        <span id="toast-text">Action completed successfully.</span>
+        <span id="toast-text">Copied to clipboard!</span>
     </div>
 
     <!-- Scripts -->
