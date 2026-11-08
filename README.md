@@ -19,8 +19,8 @@ Welcome to my personal portfolio! This website showcases my work, skills, projec
 ## 📬 Contact
 
 - **Email:** singsaurabh43431@gmail.com
-- **GitHub:** [My GitHub](https://github.com/Rohit-Solanki1890)
-- **LinkedIn:** [My LinkedIn](https://linkedin.com/in/rohitbhai-solanki-603585357)
+- **GitHub:** [My GitHub](https://github.com/Saurabh-Singh33)
+- **LinkedIn:** [My LinkedIn](https://www.linkedin.com/in/saurabh-singh-b1b88a326/)
 
 ---
 
