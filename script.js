@@ -1,7 +1,72 @@
 /**
  * SAURABH SINGH RATHORE — PERSONAL PORTFOLIO
- * Clean, lightweight, vanilla JavaScript interactions
+ * Vanilla JavaScript interactions & Tab navigation
  */
+
+// Global opentab function for About Me section tabs (Skills | Experience | Education)
+function opentab(tabname, event) {
+    const tablinks = document.querySelectorAll(".tab-links");
+    const tabcontents = document.querySelectorAll(".tab-contents");
+
+    tablinks.forEach((link) => link.classList.remove("active-link"));
+    tabcontents.forEach((content) => content.classList.remove("active-tab"));
+
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add("active-link");
+    } else {
+        tablinks.forEach((link) => {
+            const attr = link.getAttribute("onclick") || "";
+            if (attr.includes(tabname)) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+
+    const targetTab = document.getElementById(tabname);
+    if (targetTab) {
+        targetTab.classList.add("active-tab");
+    }
+}
+
+// Global handleContactSubmit function for Contact form
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById("sender-name")?.value.trim() || "";
+    const email = document.getElementById("sender-email")?.value.trim() || "";
+    const message = document.getElementById("sender-message")?.value.trim() || "";
+
+    const mailtoUrl = `mailto:singhsaurabh43431@gmail.com?subject=${encodeURIComponent("Portfolio Contact from " + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+
+    window.open(mailtoUrl, "_blank");
+
+    showToast("Opening email client to reach Saurabh!");
+    const form = document.getElementById("contact-form");
+    if (form) form.reset();
+}
+
+// Toast notification helper
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    const toastText = document.getElementById("toast-text");
+    if (!toast || !toastText) return;
+
+    toastText.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3500);
+}
+
+// Copy email to clipboard
+function copyEmail() {
+    const email = "singhsaurabh43431@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        showToast("Copied email: " + email);
+    }).catch(() => {
+        showToast("Email: " + email);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     // ==========================================================================
@@ -10,15 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggleBtn = document.getElementById("theme-toggle");
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector("i") : null;
 
-    // Check saved theme or system preference
+    // Pure dark theme is DEFAULT. Only switch to light if explicitly chosen by user.
     const savedTheme = localStorage.getItem("saurabh_theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+    if (savedTheme === "light") {
         document.body.classList.add("light-theme");
         if (themeIcon) {
             themeIcon.classList.remove("fa-moon");
             themeIcon.classList.add("fa-sun");
+        }
+    } else {
+        document.body.classList.remove("light-theme");
+        if (themeIcon) {
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
         }
     }
 
@@ -124,28 +194,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-// ==========================================================================
-// 4. COPY EMAIL HELPER WITH TOAST
-// ==========================================================================
-function copyEmail() {
-    const email = "saurabhsingh.dev@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-        showToast("Copied email to clipboard!");
-    }).catch(() => {
-        showToast("Email: " + email);
-    });
-}
-
-function showToast(message) {
-    const toast = document.getElementById("toast");
-    const toastText = document.getElementById("toast-text");
-    if (!toast || !toastText) return;
-
-    toastText.textContent = message;
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3500);
-}
