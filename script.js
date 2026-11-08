@@ -1,7 +1,29 @@
 /**
  * SAURABH SINGH RATHORE — PERSONAL PORTFOLIO
- * Vanilla JavaScript interactions & Tab navigation
+ * Vanilla JavaScript interactions & EmailJS Contact Form
  */
+
+// ==========================================================================
+// EMAILJS CONFIGURATION
+// Replace the placeholders below with your actual keys from EmailJS Dashboard:
+// 1. PUBLIC_KEY: Account > General > Public Key
+// 2. SERVICE_ID: Email Services > Service ID (e.g. "service_xxxxxxx")
+// 3. TEMPLATE_ID: Email Templates > Template ID (e.g. "template_xxxxxxx")
+// ==========================================================================
+const EMAILJS_CONFIG = {
+    PUBLIC_KEY: "YOUR_PUBLIC_KEY",       // Replace with your EmailJS Public Key
+    SERVICE_ID: "YOUR_SERVICE_ID",       // Replace with your EmailJS Service ID
+    TEMPLATE_ID: "YOUR_TEMPLATE_ID"      // Replace with your EmailJS Template ID
+};
+
+// Initialize EmailJS SDK
+(function initEmailJS() {
+    if (typeof emailjs !== "undefined" && EMAILJS_CONFIG.PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+        emailjs.init({
+            publicKey: EMAILJS_CONFIG.PUBLIC_KEY
+        });
+    }
+})();
 
 // Global opentab function for About Me section tabs (Skills | Experience | Education)
 function opentab(tabname, event) {
@@ -28,43 +50,152 @@ function opentab(tabname, event) {
     }
 }
 
-// Global handleContactSubmit function for Contact form
+// ==========================================================================
+// CONTACT FORM SUBMISSION WITH EMAILJS & FORM VALIDATION
+// ==========================================================================
 function handleContactSubmit(event) {
     event.preventDefault();
-    const name = document.getElementById("sender-name")?.value.trim() || "";
-    const email = document.getElementById("sender-email")?.value.trim() || "";
-    const message = document.getElementById("sender-message")?.value.trim() || "";
 
-    const mailtoUrl = `mailto:singhsaurabh43431@gmail.com?subject=${encodeURIComponent("Portfolio Contact from " + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+    const nameInput = document.getElementById("sender-name");
+    const emailInput = document.getElementById("sender-email");
+    const messageInput = document.getElementById("sender-message");
+    const submitBtn = document.getElementById("submit-btn");
 
-    window.open(mailtoUrl, "_blank");
+    const name = nameInput ? nameInput.value.trim() : "";
+    const email = emailInput ? emailInput.value.trim() : "";
+    const message = messageInput ? messageInput.value.trim() : "";
 
-    showToast("Opening email client to reach Saurabh!");
-    const form = document.getElementById("contact-form");
-    if (form) form.reset();
+    // 1. Basic Form Validation
+    if (!name || name.length < 2) {
+        showStatus("Please enter your name (at least 2 characters).", "error");
+        showToast("Please enter your name.", "error");
+        if (nameInput) nameInput.focus();
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+        showStatus("Please enter a valid email address.", "error");
+        showToast("Please enter a valid email address.", "error");
+        if (emailInput) emailInput.focus();
+        return;
+    }
+
+    if (!message || message.length < 5) {
+        showStatus("Please enter a message (at least 5 characters).", "error");
+        showToast("Please enter a detailed message.", "error");
+        if (messageInput) messageInput.focus();
+        return;
+    }
+
+    // 2. Check if EmailJS keys are still placeholders
+    if (
+        EMAILJS_CONFIG.PUBLIC_KEY === "YOUR_PUBLIC_KEY" ||
+        EMAILJS_CONFIG.SERVICE_ID === "YOUR_SERVICE_ID" ||
+        EMAILJS_CONFIG.TEMPLATE_ID === "YOUR_TEMPLATE_ID"
+    ) {
+        // Friendly notice with mailto fallback
+        const mailtoUrl = `mailto:saurabhsinghdeveloper591@gmail.com?subject=${encodeURIComponent("Portfolio Message from " + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+        window.open(mailtoUrl, "_blank");
+        showStatus("Please paste your EmailJS keys in script.js (EMAILJS_CONFIG). Opened your email client as fallback.", "error");
+        showToast("Please add your EmailJS keys in script.js", "error");
+        return;
+    }
+
+    // 3. UI Sending State
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    }
+    showStatus("Sending your message...", "");
+
+    // 4. Template parameters mapped for EmailJS
+    // reply_to allows you to reply directly to the sender's email from Gmail!
+    const templateParams = {
+        name: name,
+        from_name: name,
+        user_name: name,
+        email: email,
+        user_email: email,
+        reply_to: email,
+        message: message,
+        to_email: "saurabhsinghdeveloper591@gmail.com"
+    };
+
+    // 5. Send email via EmailJS
+    emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+        .then(() => {
+            showStatus("Thank you! Your message has been sent successfully. I'll get back to you soon.", "success");
+            showToast("Message sent successfully!", "success");
+
+            const form = document.getElementById("contact-form");
+            if (form) form.reset();
+        })
+        .catch((error) => {
+            console.error("EmailJS Error:", error);
+            showStatus("Oops! Failed to send message. Please try again or email directly.", "error");
+            showToast("Failed to send message. Please try again.", "error");
+        })
+        .finally(() => {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = "Submit";
+            }
+        });
 }
 
-// Toast notification helper
-function showToast(message) {
+// Inline status display helper
+function showStatus(text, type) {
+    const status = document.getElementById("form-status");
+    if (!status) return;
+
+    status.textContent = text;
+    status.className = "form-status";
+    if (type === "success") {
+        status.classList.add("success");
+    } else if (type === "error") {
+        status.classList.add("error");
+    } else {
+        status.style.display = "block";
+        status.style.color = "var(--text-muted)";
+    }
+}
+
+// Toast notification helper with success / error support
+function showToast(message, type = "success") {
     const toast = document.getElementById("toast");
     const toastText = document.getElementById("toast-text");
+    const toastIcon = document.getElementById("toast-icon");
     if (!toast || !toastText) return;
 
     toastText.textContent = message;
+
+    if (toastIcon) {
+        if (type === "error") {
+            toastIcon.className = "fa-solid fa-circle-exclamation";
+            toast.style.borderColor = "#f43f5e";
+            toastIcon.style.color = "#f43f5e";
+        } else {
+            toastIcon.className = "fa-solid fa-circle-check";
+            toast.style.borderColor = "var(--accent)";
+            toastIcon.style.color = "var(--accent)";
+        }
+    }
+
     toast.classList.add("show");
 
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 3500);
+    }, 4000);
 }
 
 // Copy email to clipboard
 function copyEmail() {
-    const email = "singhsaurabh43431@gmail.com";
+    const email = "saurabhsinghdeveloper591@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
-        showToast("Copied email: " + email);
+        showToast("Copied email: " + email, "success");
     }).catch(() => {
-        showToast("Email: " + email);
+        showToast("Email: " + email, "success");
     });
 }
 
